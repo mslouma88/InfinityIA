@@ -35,7 +35,7 @@
 
 ## Organisation des Fichiers et Dossiers
 
-    synapse-ai/
+    Infinity_AI/
     ├── app.py
     ├── requirements.txt
     ├── README.md
