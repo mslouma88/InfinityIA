@@ -82,7 +82,7 @@
 L'application est déployée sur Streamlit Cloud. Pour plus d'informations, consultez la section Déploiement.
 
 ## Licence
-Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENCE) pour plus de détails.
 
 ## Contact
 
