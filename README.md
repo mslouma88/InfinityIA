@@ -33,11 +33,6 @@
 - **GPT-3.5 Turbo** : Modèle d'IA pour la génération de contenu.
 - **Cloud Computing** : Déploiement sur Streamlit Cloud.
 
-### 2. Créer et Activer un Environnement Virtuel (Recommandé)
-a. Installer `virtualenv` (si ce n'est pas déjà fait)
-
-
-
 ## Organisation des Fichiers et Dossiers
 
     synapse-ai/
@@ -94,10 +89,8 @@ Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
 - M MEJRI Salam 
 - Mme BENAMOR Nesrine
 
-```markdown
+
 ![Licence MIT](https://img.shields.io/badge/Licence-MIT-green)
 ![Issues](https://img.shields.io/github/issues/mslouma88/infinityIA)
 ![Forks](https://img.shields.io/github/forks/mslouma88/InfinityIA)
 ![Stars](https://img.shields.io/github/stars/mslouma88/InfinityIA)
-
-```
