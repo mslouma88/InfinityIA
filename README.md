@@ -1,22 +1,42 @@
-# Synapse AI
+# Infinity AI
 
-**Synapse AI** est une plateforme futuriste de collaboration créative et de productivité augmentée, utilisant l'IA GPT-3.5-turbo pour assister les utilisateurs dans divers domaines tels que la création de contenu, la gestion de projets, et bien plus.
+**Infinity AI** est une plateforme futuriste de collaboration créative et de productivité augmentée, utilisant l'IA GPT-3.5-turbo et LangChain pour assister les utilisateurs dans divers domaines tels que la création de contenu, la gestion de projets, l'analyse de données, et bien plus encore.
 
 ## Fonctionnalités Principales
 
-- **Assistant IA Multimodal** : Traitement du texte et des images.
-- **Création Collaborative en Temps Réel** : Travail en équipe avec assistance IA.
-- **Personnalisation Contextuelle de l'IA** : Adaptation aux préférences de l'utilisateur.
 - **Mémoire Contextuelle** : Mémoire persistante des projets et préférences.
 - **Compétences Spécifiques** : Support pour divers domaines comme le droit, la médecine, etc.
 - **Génération de Contenus Complexes** : Rapports, articles, scripts, code informatique.
-- **Éthique et Transparence de l’IA** : Outils de contrôle et de modération.
+- **Résumé de PDF** : Résumé automatique des documents PDF.
+- **Analyse de Fichier CSV** : Analyse et visualisation des données CSV.
+- **Recommandation de Livre** : Suggestions de livres basées sur vos intérêts.
+- **Générateur de Contenu selon le Sujet** : Création de contenu personnalisé.
+- **Analyse de CV** : Analyse et amélioration des CV.
+- **Recherche dans les Documents** : Téléchargez des documents et posez des questions spécifiques sur leur contenu.
+
+## Technologies Utilisées
+
+- **Streamlit** : Pour la création de l'interface utilisateur.
+- **GPT-3.5 Turbo** : Modèle d'IA pour la génération de contenu.
+- **LangChain** : Pour la gestion des interactions complexes avec les documents.
+- **Cloud Computing** : Déploiement sur Streamlit Cloud.
+- **PyPDF2** : Pour la manipulation des fichiers PDF.
+- **Pandas** : Pour l'analyse des fichiers CSV.
+- **Matplotlib** : Pour la génération de graphiques.
+- **FAISS** : Pour la recherche vectorielle et l'indexation des documents.
+
+
 
 ## Technologies Utilisées
 
 - **Streamlit** : Pour la création de l'interface utilisateur.
 - **GPT-3.5 Turbo** : Modèle d'IA pour la génération de contenu.
 - **Cloud Computing** : Déploiement sur Streamlit Cloud.
+
+### 2. Créer et Activer un Environnement Virtuel (Recommandé)
+a. Installer `virtualenv` (si ce n'est pas déjà fait)
+
+
 
 ## Organisation des Fichiers et Dossiers
 
@@ -42,9 +62,10 @@
 
 ## Installation
 
-1. **Cloner le Répertoire :**
+1. Cloner le Répertoire
+
     ```bash
-    git clone https://github.com/votre-utilisateur/synapse-ai.git
+    git clone https://github.com/mslouma88/infinityIA.git
     ```
 
 2. Installer les Dépendances :
@@ -68,5 +89,15 @@ L'application est déployée sur Streamlit Cloud. Pour plus d'informations, cons
 ## Licence
 Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
 
-Contact
-Pour toute question ou suggestion, contactez-nous à salam.mejri@gmail.com
+## Contact
+
+- M MEJRI Salam 
+- Mme BENAMOR Nesrine
+
+```markdown
+![Licence MIT](https://img.shields.io/badge/Licence-MIT-green)
+![Issues](https://img.shields.io/github/issues/mslouma88/infinityIA)
+![Forks](https://img.shields.io/github/forks/mslouma88/InfinityIA)
+![Stars](https://img.shields.io/github/stars/mslouma88/InfinityIA)
+
+```
