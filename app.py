@@ -6,7 +6,7 @@ from utils.csv_analysis import analyze_csv
 from utils.book_recommendation import recommend_books
 from utils.content_generator import generate_content
 from utils.cv_analysis import analyze_cv
-from utils.document_search import search_documents
+#from utils.document_search import search_documents
 
 
 from dotenv import load_dotenv
