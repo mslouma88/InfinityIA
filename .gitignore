@@ -1,3 +1,4 @@
 .env
 LaPlateformeIA.py
 pSynapse_AI.py
+utils/__pycache__/*
