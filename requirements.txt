@@ -1,14 +1,13 @@
 streamlit==1.39.0
 Pillow==10.3.0
 openai==0.27.0
-#PyPDF2==3.0.1
 pypdf==3.9.0
 pandas==2.2.3
 matplotlib==3.8.4
 faiss-cpu==1.9.0
-#pygame==2.6.1
 python-dotenv==1.0.1
 tiktoken==0.7.0
 python-docx==1.1.2
 textblob==0.15.3
 gtts==2.5.3
+#pygame==2.6.1
