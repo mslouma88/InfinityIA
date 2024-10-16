@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 import datetime
 from gtts import gTTS
-import requests, openai, random ,io ,pygame , os
+import openai, random ,io ,pygame , os
 from textblob import TextBlob
 
 from utils.pdf_summary import summarize_pdf
@@ -22,11 +22,37 @@ load_dotenv()
 
 # Configuration de la page
 st.set_page_config(
-    page_title="Infinity AI",
-    page_icon="🤖",
+    page_title="Bienvenue Infinity AI",
+    page_icon="♾️",
     layout="wide",
     initial_sidebar_state="expanded",
 )
+
+# Style pour le titre animé :)
+st.markdown(
+    """
+    <style>
+    .title {
+        font-size: 3em;
+        color: #ef9900;  
+        text-align: left;
+        animation: fadeIn 5s;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    </style>
+    <h1 class="title">Bienvenue sur Infinity AI ♾️</h1>
+    """,
+    unsafe_allow_html=True
+)
+
 
 # Définir le style CSS personnalisé
 custom_css = """
@@ -132,7 +158,7 @@ st.sidebar.image(logo, width=300)
 selected_theme = st.sidebar.selectbox("🎨 Choisissez un thème", list(themes.keys()), index=0)
 update_theme(selected_theme)
 
-st.title("Bienvenue sur Infinity AI")
+#st.title("Bienvenue sur Infinity AI")
 
 st.markdown("""
 **Infinity AI** est une plateforme alimentée par une intelligence artificielle avancée, conçue pour booster votre créativité et votre productivité. Elle offre une large gamme de fonctionnalités pour accompagner les étudiants, les créateurs, chercheurs et les entreprises dans leurs projets :

@@ -10,3 +10,4 @@ pygame==2.6.1
 python-dotenv==1.0.1
 tiktoken==0.7.0
 python-docx==1.1.2
+textblob==0.15.3
