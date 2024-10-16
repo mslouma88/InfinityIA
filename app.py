@@ -79,7 +79,7 @@ themes = {
         "sidebar-box-shadow": "0 0 10px #FFFFFF",
     },
     "Rose":  {
-        "background-color": "#000000",
+        "background-color": "#0D1117",
         "color": "#FFFFFF",
         "button-background-color": "#cf1e4e",
         "button-color": "#000000",
@@ -89,7 +89,7 @@ themes = {
         "sidebar-box-shadow": "0 0 10px #cf1e4e",
     },
     "Gaming": {
-        "background-color": "#1F1F1F",
+        "background-color": "#0D1117",
         "color": "#FFFFFF",
         "button-background-color": "#ef9900",
         "button-color": "#1F1F1F",
@@ -99,7 +99,7 @@ themes = {
         "sidebar-box-shadow": "0 0 10px #FFD700",
     },
     "Neon": {
-        "background-color": "#1A1A1D",  
+        "background-color": "#0D1117",  
         "color": "#FFFFFF",
         "button-background-color": "#00c599",
         "button-color": "#1A1A1D",
