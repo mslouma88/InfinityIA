@@ -2,7 +2,7 @@
 
 **Infinity AI** est une plateforme futuriste de collaboration créative et de productivité augmentée, utilisant l'IA **GPT-3.5-turbo** et **SerpAPI** pour assister les utilisateurs dans divers domaines tels que la création de contenu, la gestion de projets, l'analyse de données, et bien plus encore. 🚀✨
 
-# 🌟 Fonctionnalités Principales
+## 🌟 Fonctionnalités Principales
 
 - 🧠 Mémoire Contextuelle : Mémoire persistante des projets et préférences.
 - 🔧 Compétences Spécifiques : Support pour divers domaines comme le droit, la médecine, etc.
@@ -17,7 +17,7 @@
 - 🤖 Assistant IA d’Entreprise : Assistance personnalisée pour les besoins professionnels.
 - 🎁 Surprise ! : Blagues et surprises amusantes intégrées pour égayer votre expérience.
 
-# 🛠️ Technologies Utilisées
+## 🛠️ Technologies Utilisées
 
 - 📱 Streamlit : Pour la création de l'interface utilisateur.
 - 🤖 GPT-3.5 Turbo : Modèle d'IA pour la génération de contenu.
@@ -26,7 +26,7 @@
 - 🔍 PubMed API : pour la récupération des documents médicaux.
 - 🔎 SerpAPI : Pour les fonctionnalités de recherche avancée sur le web.
 
-# 📂 Organisation des Fichiers et Dossiers
+## 📂 Organisation des Fichiers et Dossiers
 
     Infinity_AI/
     ├── app.py
@@ -49,7 +49,7 @@
         ├── search_documents.py
         └── FAQ_entreprise.py
 
-# 🛠️ Installation
+## 🛠️ Installation
 
 ### 1. Cloner le Répertoire
 
@@ -63,7 +63,7 @@ git clone https://github.com/mslouma88/infinityIA.git
 pip install -r requirements.txt
 ```
 
-# 🚀 Utilisation
+## 🚀 Utilisation
 
 ### Lancer l’Application Localement
 
@@ -71,15 +71,15 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-# ☁️ Déploiement
+## ☁️ Déploiement
 
 L'application est déployée sur Streamlit Cloud. Pour plus d'informations, consultez ce [lien](https://streamlit.io/cloud).
 
-# 📄 Licence
+## 📄 Licence
 
 Ce projet est sous licence MIT. Voir le fichier [LICENCE](LICENCE) pour plus de détails.
 
-# 📬 Contact
+## 📬 Contact
 
 - M. MEJRI Salam 📧
 
@@ -87,7 +87,7 @@ Ce projet est sous licence MIT. Voir le fichier [LICENCE](LICENCE) pour plus de 
 
 Vos contributions sont les bienvenues ! Si vous souhaitez améliorer Infinity AI, n'hésitez pas à ouvrir une issue ou à soumettre une pull request. 🤝✨
 
-# 📢 Suivez-nous
+## 📢 Suivez-nous
 Restez informé des dernières mises à jour et fonctionnalités en nous suivant sur [GitHub](https://github.com/mslouma88/infinityIA). 🐙🔔
 
 ![Licence MIT](https://img.shields.io/badge/Licence-MIT-green)
