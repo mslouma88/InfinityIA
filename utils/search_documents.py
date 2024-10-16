@@ -1,11 +1,11 @@
-import PyPDF2
+from pypdf import PdfReader
 import os
 import openai
 
 def extract_text_from_pdf(pdf_file):
     """Extrait le texte d'un fichier PDF."""
     try:
-        pdf_reader = PyPDF2.PdfReader(pdf_file)
+        pdf_reader = PdfReader(pdf_file)
         text = ""
         for page in pdf_reader.pages:
             text += page.extract_text()

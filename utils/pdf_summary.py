@@ -1,11 +1,11 @@
-import PyPDF2
+from pypdf import PdfReader
 import openai
 import os
 
 def summarize_pdf(uploaded_file):
     try:
         # Lire le PDF
-        pdf_reader = PyPDF2.PdfReader(uploaded_file)
+        pdf_reader = PdfReader(uploaded_file)
         text = ""
         for page in pdf_reader.pages:
             text += page.extract_text()

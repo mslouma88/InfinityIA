@@ -2,7 +2,7 @@ import os
 import openai
 from typing import List
 from dotenv import load_dotenv
-import PyPDF2
+from pypdf import PdfReader
 import tiktoken
 
 # Charger les variables d'environnement
@@ -19,7 +19,7 @@ def load_documents(uploaded_files: List[object]) -> str:
     for file in uploaded_files:
         try:
             if file.type == "application/pdf":
-                pdf_reader = PyPDF2.PdfReader(file)
+                pdf_reader = PdfReader(file)
                 for page in pdf_reader.pages:
                     all_text += page.extract_text() + "\n"
             elif file.type == "text/plain":

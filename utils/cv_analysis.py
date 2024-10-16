@@ -1,11 +1,11 @@
-import PyPDF2
+from pypdf import PdfReader
 import openai
 import os
 
 def analyze_cv(uploaded_file):
     try:
         # Lire le CV PDF
-        pdf_reader = PyPDF2.PdfReader(uploaded_file)
+        pdf_reader = PdfReader(uploaded_file)
         text = ""
         for page in pdf_reader.pages:
             text += page.extract_text()
