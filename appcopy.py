@@ -187,33 +187,17 @@ pygame.mixer.init()
 def speak_text(text):
     # Créer un objet gTTS
     tts = gTTS(text=text, lang='fr')
-    
+
     # Créer un tampon en mémoire
     fp = io.BytesIO()
-    
+
     # Sauvegarder l'audio dans le tampon en mémoire
     tts.write_to_fp(fp)
-    
+
     # Rembobiner le tampon au début
     fp.seek(0)
-    
-    try:
-        # Charger l'audio depuis le tampon en mémoire
-        pygame.mixer.music.load(fp)
-        
-        # Jouer l'audio
-        pygame.mixer.music.play()
-        
-        # Attendre que la lecture soit terminée
-        while pygame.mixer.music.get_busy():
-            pygame.time.Clock().tick(10)
-    
-    except Exception as e:
-        st.error(f"Erreur lors de la lecture audio : {e}")
-    
-    finally:
-        # Nettoyer le tampon en mémoire
-        fp.close()
+
+    return fp
 
 # Fonction pour analyser le sentiment
 def analyze_sentiment(text):
@@ -449,7 +433,7 @@ with tab8:
     
     # Section de l'assistant IA
     with tabs[2]:
-    # Zone de saisie de texte
+        # Zone de saisie de texte
         user_input = st.text_input("Écrivez votre message ici")
         
         # Déplacer la case à cocher avant le bouton d'envoi
@@ -466,8 +450,8 @@ with tab8:
                 st.write(f"**Agent** : {response}")
 
                 # Ajouter au contexte
-                st.session_state.context.append({"role": "user", "content": user_input})
-                st.session_state.context.append({"role": "assistant", "content": response})
+                st.session_state.context.append({"role": "🙋 Moi", "content": user_input})
+                st.session_state.context.append({"role": "👾 Agent Infinity", "content": response})
 
                 # Mettre à jour la zone de conversation
                 update_conversation()
@@ -476,7 +460,6 @@ with tab8:
                 if read_aloud:
                     audio_fp = speak_text(response)
                     st.audio(audio_fp, format='audio/mp3')
-
 
 
             # Bouton pour effacer l'historique
