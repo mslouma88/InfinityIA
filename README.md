@@ -23,7 +23,7 @@
 - 🤖 GPT-3.5 Turbo : Modèle d'IA pour la génération de contenu.
 - ☁️ Cloud Computing : Déploiement sur Streamlit Cloud.
 - 📄 PyPDF : Pour la manipulation des fichiers PDF.
-- 🔍 FAISS : Pour la recherche vectorielle et l'indexation des documents.
+- 🔍 PubMed API : pour la récupération des documents médicaux.
 - 🔎 SerpAPI : Pour les fonctionnalités de recherche avancée sur le web.
 
 # 📂 Organisation des Fichiers et Dossiers
@@ -91,3 +91,4 @@ Vos contributions sont les bienvenues ! Si vous souhaitez améliorer Infinity AI
 Restez informé des dernières mises à jour et fonctionnalités en nous suivant sur [GitHub](https://github.com/mslouma88/infinityIA). 🐙🔔
 
 ![Licence MIT](https://img.shields.io/badge/Licence-MIT-green)
+![Version](https://img.shields.io/badge/version-1.0-green.svg)
