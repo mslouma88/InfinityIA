@@ -395,10 +395,6 @@ with tab8:
                                 st.write(f"🔗 Lien : {doc['lien']}")
                                 st.write(f"📝 Extrait : {doc['extrait']}")
 
-        # Pied de page de l'onglet
-        st.markdown("---")
-        st.markdown("Développé avec ❤️ par Salam & Nesrine ")
-
         # Section de l'assistant IA
     with tabs[1]:
         st.header("🤖 Assistant IA")
@@ -449,7 +445,7 @@ with tab8:
     # Fonctionnalité : FAQ Entreprise
     with tabs[3]:  # Assurez-vous que tabs[3] est correctement défini
         st.header("FAQ Entreprise 🏢")
-
+        st.header("⚠️ on n'a pas encore fini de developper cette section")
         # Saisir le chemin du répertoire
         directory_path = st.text_input("🗂️ Spécifiez le chemin du répertoire contenant les fichiers FAQ :")
 
