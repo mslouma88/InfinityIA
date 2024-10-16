@@ -60,28 +60,10 @@ def analyze_csv(uploaded_file):
         # Générer l'analyse AI
         ai_analysis = generate_ai_analysis(df_info)
 
-        # Générer des graphiques
-        plt.figure(figsize=(15, 10))
-        
-        # Histogramme pour les colonnes numériques
-        numeric_cols = df.select_dtypes(include=['int64', 'float64']).columns
-        df[numeric_cols].hist(figsize=(15, 10))
-        plt.tight_layout()
-        hist_plot = plt.gcf()
-        plt.close()
-
-        # Heatmap de corrélation
-        plt.figure(figsize=(10, 8))
-        sns.heatmap(df[numeric_cols].corr(), annot=True, cmap='coolwarm')
-        plt.title("Matrice de corrélation")
-        corr_plot = plt.gcf()
-        plt.close()
 
         return {
             "data": description,
-            "hist_plot": hist_plot,
-            "corr_plot": corr_plot,
             "ai_analysis": ai_analysis
         }
     except Exception as e:
-        return {"error": f"Erreur lors de l'analyse du CSV : {e}"}
+        return {"error": f"❌ Erreur lors de l'analyse du CSV : {e}"}

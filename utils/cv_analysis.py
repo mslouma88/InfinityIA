@@ -10,6 +10,10 @@ def analyze_cv(uploaded_file):
         for page in pdf_reader.pages:
             text += page.extract_text()
 
+        # Vérifier si le texte est vide
+        if not text.strip():
+            return "📄 Le fichier semble être vide ou illisible."
+
         # Appel à l'API OpenAI pour analyser
         openai.api_key = os.getenv("OPENAI_API_KEY")
         prompt = f"Analyse ce CV et donne des suggestions d'amélioration : {text}"
@@ -25,4 +29,4 @@ def analyze_cv(uploaded_file):
         analysis = response.choices[0].message['content'].strip()
         return analysis
     except Exception as e:
-        return f"Erreur lors de l'analyse du CV : {e}"
+        return f"❌ Erreur lors de l'analyse du CV : {e}"

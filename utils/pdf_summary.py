@@ -10,6 +10,10 @@ def summarize_pdf(uploaded_file):
         for page in pdf_reader.pages:
             text += page.extract_text()
 
+        # Vérifier si le texte est vide
+        if not text.strip():
+            return "📄 Le PDF semble être vide ou non lisible."
+
         # Appel à l'API OpenAI pour résumer
         openai.api_key = os.getenv("OPENAI_API_KEY")
         response = openai.ChatCompletion.create(
@@ -18,10 +22,10 @@ def summarize_pdf(uploaded_file):
                 {"role": "system", "content": "Tu es un assistant qui résume des documents PDF."},
                 {"role": "user", "content": f"Résumé le contenu suivant : {text}"}
             ],
-            max_tokens=3000,
+            max_tokens=1500,  # Limité pour avoir des résumés plus rapides
             temperature=0.5,
         )
         summary = response.choices[0].message['content'].strip()
         return summary
     except Exception as e:
-        return f"Erreur lors du résumé du PDF : {e}"
+        return f"❌ Erreur lors du résumé du PDF : {e}"

@@ -1,42 +1,44 @@
 import os
+import openai
 from typing import List
 from dotenv import load_dotenv
-from langchain.document_loaders import PyPDFLoader, TextLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.vectorstores import FAISS
-from langchain.chains import RetrievalQA
-from langchain.chat_models import ChatOpenAI
-from langchain.schema import Document
+import PyPDF2
+import tiktoken
 
 # Charger les variables d'environnement
 load_dotenv()
 
-def load_documents(uploaded_files: List[object]) -> List[Document]:
+# Configurer l'API OpenAI
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+def load_documents(uploaded_files: List[object]) -> str:
     """
-    Charge les documents téléchargés (PDF et TXT) et retourne une liste de documents.
+    Charge les documents téléchargés (PDF et TXT) et retourne leur contenu sous forme de texte.
     """
-    documents = []
+    all_text = ""
     for file in uploaded_files:
         try:
-            file_path = f"/tmp/{file.name}"
-            with open(file_path, "wb") as f:
-                f.write(file.getvalue())
-            
             if file.type == "application/pdf":
-                loader = PyPDFLoader(file_path)
+                pdf_reader = PyPDF2.PdfReader(file)
+                for page in pdf_reader.pages:
+                    all_text += page.extract_text() + "\n"
             elif file.type == "text/plain":
-                loader = TextLoader(file_path)
+                all_text += file.getvalue().decode("utf-8") + "\n"
             else:
                 print(f"Type de fichier non supporté : {file.type}")
-                continue
-            
-            docs = loader.load()
-            documents.extend(docs)
-            os.remove(file_path)
         except Exception as e:
             print(f"Erreur lors du chargement du fichier {file.name} : {e}")
-    return documents
+    return all_text
+
+def truncate_text(text: str, max_tokens: int = 3000) -> str:
+    """
+    Tronque le texte pour qu'il ne dépasse pas le nombre maximum de tokens.
+    """
+    encoding = tiktoken.get_encoding("cl100k_base")
+    tokens = encoding.encode(text)
+    if len(tokens) > max_tokens:
+        return encoding.decode(tokens[:max_tokens])
+    return text
 
 def search_documents(uploaded_files: List[object], question: str) -> str:
     """
@@ -44,37 +46,36 @@ def search_documents(uploaded_files: List[object], question: str) -> str:
     """
     try:
         # Charger les documents
-        documents = load_documents(uploaded_files)
-        if not documents:
+        document_text = load_documents(uploaded_files)
+        if not document_text:
             return "Aucun document valide téléchargé."
 
-        # Diviser les documents en chunks
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
-        texts = text_splitter.split_documents(documents)
+        # Tronquer le texte si nécessaire
+        truncated_text = truncate_text(document_text)
 
-        # Initialiser les embeddings
-        embeddings = OpenAIEmbeddings()
-        
-        # Créer l'index vectoriel avec FAISS
-        vector_store = FAISS.from_documents(texts, embeddings)
-        
-        # Initialiser le modèle LLM avec ChatOpenAI
-        llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
-        
-        # Créer une chaîne de questions-réponses avec récupération
-        qa = RetrievalQA.from_chain_type(
-            llm=llm,
-            chain_type="stuff",
-            retriever=vector_store.as_retriever(search_kwargs={"k": 3}),
-            return_source_documents=True
+        # Préparer le prompt pour GPT
+        prompt = f"""Contexte: {truncated_text}
+
+Question: {question}
+
+Réponse :"""
+
+        # Appeler l'API OpenAI
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": "Vous êtes un assistant utile qui répond aux questions basées sur le contexte fourni."},
+                {"role": "user", "content": prompt}
+            ],
+            max_tokens=500,
+            n=1,
+            stop=None,
+            temperature=0.7,
         )
-        
-        # Obtenir la réponse
-        result = qa({"query": question})
-        answer = result['result']
-        sources = [doc.metadata.get('source', 'Source inconnue') for doc in result['source_documents']]
-        
-        return f"Réponse : {answer}\n\nSources : {', '.join(set(sources))}"
+
+        # Extraire et retourner la réponse
+        answer = response.choices[0].message['content'].strip()
+        return f"Réponse : {answer}"
 
     except Exception as e:
         return f"Une erreur est survenue lors de la recherche dans les documents : {e}"
