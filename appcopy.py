@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 import datetime
 from gtts import gTTS
-import openai, random ,io ,pygame , os
+import openai, random , os
 from textblob import TextBlob
 
 from utils.pdf_summary import summarize_pdf
@@ -181,23 +181,6 @@ def update_conversation():
     conversation.text_area("📜 **Historique de la conversation**", 
                            value="\n".join([f"{msg['role'].capitalize()}: {msg['content']}" for msg in st.session_state.context]),
                            height=300)
-    
-# Initialisation de pygame pour la lecture audio
-pygame.mixer.init()
-def speak_text(text):
-    # Créer un objet gTTS
-    tts = gTTS(text=text, lang='fr')
-
-    # Créer un tampon en mémoire
-    fp = io.BytesIO()
-
-    # Sauvegarder l'audio dans le tampon en mémoire
-    tts.write_to_fp(fp)
-
-    # Rembobiner le tampon au début
-    fp.seek(0)
-
-    return fp
 
 # Fonction pour analyser le sentiment
 def analyze_sentiment(text):
@@ -434,12 +417,10 @@ with tab8:
     # Section de l'assistant IA
     with tabs[2]:
         # Zone de saisie de texte
-        user_input = st.text_input("Écrivez votre message ici")
-        
-        # Déplacer la case à cocher avant le bouton d'envoi
-        read_aloud = st.checkbox("🔊 Lire la réponse à voix haute")
+        user_input = st.text_input("📝 Écrivez votre message ici")
 
-        if st.button("Envoyer"):
+        # Si l'utilisateur veut envoyer le message
+        if st.button("🚀 Envoyer"):
             if user_input:
                 # Analyser le sentiment
                 sentiment = analyze_sentiment(user_input)
@@ -447,7 +428,7 @@ with tab8:
 
                 # Interroger ChatGPT
                 response = ask_openai(user_input, st.session_state.context)
-                st.write(f"**Agent** : {response}")
+                st.write(f"**🤖 Agent** : {response}")
 
                 # Ajouter au contexte
                 st.session_state.context.append({"role": "🙋 Moi", "content": user_input})
@@ -455,11 +436,8 @@ with tab8:
 
                 # Mettre à jour la zone de conversation
                 update_conversation()
-
-                # Lire la réponse à voix haute si la case est cochée
-                if read_aloud:
-                    audio_fp = speak_text(response)
-                    st.audio(audio_fp, format='audio/mp3')
+            else:
+                st.warning("⚠️ Veuillez écrire un message avant d'envoyer.")
 
 
             # Bouton pour effacer l'historique
@@ -501,13 +479,19 @@ with tab8:
 # Easter egg
 if st.sidebar.button("🎁 Surprise !"):
     jokes = [
-        "Pourquoi les robots ne prennent-ils jamais de vacances ? Parce qu'ils ont déjà trop de vis !",
-        "Comment s'appelle un robot qui fait toujours la même chose ? Un automate.",
-        "Que dit un robot quand il tombe en panne ? 'J'ai un bug-out-bag !'",
+        "Pourquoi les robots ne prennent-ils jamais de vacances ? Parce qu'ils ont déjà trop de vis ! 🤖🔧",
+        "Comment s'appelle un robot qui fait toujours la même chose ? Un automate. 🛠️",
+        "Que dit un robot quand il tombe en panne ? 'J'ai un bug-out-bag !' 🐞",
+        "Pourquoi le robot a-t-il traversé la route ? Pour aller à l'autre circuit ! 🛣️",
+        "Pourquoi les ordinateurs n'aiment-ils pas la chaleur ? Parce qu'ils ont peur de surchauffer ! ☀️💻",
+        "Quel est le plat préféré des robots ? Les algorithmes à la sauce binaire ! 🍽️",
+        "Pourquoi les robots adorent-ils les jeux de société ? Parce qu'ils aiment les défis sans fil ! 🎲",
+        "Que dit un robot qui veut sortir ? 'J'ai besoin d'une mise à jour d'ambiance !' 🎉"
     ]
+    
     joke = random.choice(jokes)
     st.sidebar.write(joke)
-    speak_text(joke)
+#    speak_text(joke)
 
 
 st.sidebar.write('---')
