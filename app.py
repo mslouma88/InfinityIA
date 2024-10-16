@@ -147,7 +147,7 @@ def update_theme(theme):
     """, unsafe_allow_html=True)
 
 # Chargement des images
-logo = Image.open("assets/INFINITYAI1.png")
+logo = Image.open("assets/logo.png")
 #banner = Image.open("assets/Banniere.gif")
 
 # Affichage du logo et de la bannière
