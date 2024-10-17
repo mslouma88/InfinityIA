@@ -230,7 +230,7 @@ def generate_ai_response(user_input):
         return f"⚠️ Une erreur est survenue : {e}"
 
 # Onglets pour choisir ce qu'il te convient
-tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs(["📝 Résumé de PDF", "📊 Analyse de CSV", "📚 Recommandation de Livre", "📝 Générateur de Contenu", "📄 Analyse de CV", "📄 cherchez dans un document", "⚕️ Recherche Médicale", "⏩ Suivant"])
+tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["📝 Résumé de PDF", "📊 Analyse de CSV", "📚 Recommandation de Livre", "📝 Générateur de Contenu", "📄 Analyse de CV", "📄 cherchez dans un document",  "⏩ Suivant"])
 
 
 # Fonctionnalité : Résumé de PDF
@@ -336,41 +336,43 @@ with tab6:
     else:
         st.info("ℹ️ Veuillez télécharger des documents pour commencer.")
 
-# Fonctionnalité : Moteur de Recherche Médicale
-with tab7:
-    st.header("🩺 Moteur de Recherche Médicale")
-
-    question_med = st.text_input("💬 Posez votre question médicale :")
-
-    if st.button("🔎 Rechercher Médicale"):
-        if question_med:
-            with st.spinner("⏳ Recherche en cours dans les bases de données médicales..."):
-                context_med = search_medical_articles(question_med)
-                
-            if "Erreur" in context_med:
-                st.error(context_med)
-            else:
-                with st.spinner("⏳ Génération de la réponse médicale..."):
-                    answer_med = generate_medical_response(context_med, question_med)
-
-                if "Erreur" in answer_med:
-                    st.error(answer_med)
-                else:
-                    st.subheader("📄 Réponse :")
-                    st.write(answer_med)
-        else:
-            st.warning("⚠️ Veuillez entrer une question médicale.")
-
 
 # Chatbot pour FAQ d’Entreprise
-with tab8:
+with tab7:
     tabs = st.tabs([
+    "⚕️ Recherche Médicale",
     "🔍 Recherche Documentaire",
     "🤖 IA Entreprise",
     "💬 Chat Écrit",
     "❓ FAQ Entreprise"])
+
+    # Fonctionnalité : Moteur de Recherche Médicale
+    with tabs[0]: 
+        st.header("🩺 Moteur de Recherche Médicale")
+
+        question_med = st.text_input("💬 Posez votre question médicale :")
+
+        if st.button("🔎 Rechercher Médicale"):
+            if question_med:
+                with st.spinner("⏳ Recherche en cours dans les bases de données médicales..."):
+                    context_med = search_medical_articles(question_med)
+                    
+                if "Erreur" in context_med:
+                    st.error(context_med)
+                else:
+                    with st.spinner("⏳ Génération de la réponse médicale..."):
+                        answer_med = generate_medical_response(context_med, question_med)
+
+                    if "Erreur" in answer_med:
+                        st.error(answer_med)
+                    else:
+                        st.subheader("📄 Réponse :")
+                        st.write(answer_med)
+            else:
+                st.warning("⚠️ Veuillez entrer une question médicale.")
+
     # Créer un onglet pour la recherche web
-    with tabs[0]:
+    with tabs[1]:
         st.header("🔍 Recherche Documentaire Web")
 
         # Champ de recherche
@@ -396,7 +398,7 @@ with tab8:
                                 st.write(f"📝 Extrait : {doc['extrait']}")
 
         # Section de l'assistant IA
-    with tabs[1]:
+    with tabs[2]:
         st.header("🤖 Assistant IA")
 
         user_input = st.text_input("💬 Posez une question ou décrivez votre projet :", "")
@@ -411,7 +413,7 @@ with tab8:
                 st.warning("⚠️ Veuillez entrer une question ou une description.")
     
     # Section de l'assistant IA
-    with tabs[2]:
+    with tabs[3]:
         # Zone de saisie de texte
         user_input = st.text_input("📝 Écrivez votre message ici")
 
@@ -443,7 +445,7 @@ with tab8:
                 st.success("Historique effacé !")
 
     # Fonctionnalité : FAQ Entreprise
-    with tabs[3]:  # Assurez-vous que tabs[3] est correctement défini
+    with tabs[4]:  # Assurez-vous que tabs[3] est correctement défini
         st.header("FAQ Entreprise 🏢")
         st.header("⚠️ on n'a pas encore fini de developper cette section")
         # Saisir le chemin du répertoire
