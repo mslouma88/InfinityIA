@@ -1,3 +1,5 @@
+![Logo](/assets/La_PLATEFORM_INTELLIGENTE.gif)
+
 # ♾️ Infinity AI
 
 **Infinity AI** est une plateforme futuriste de collaboration créative et de productivité augmentée, utilisant l'IA **GPT-3.5-turbo** et **SerpAPI** pour assister les utilisateurs dans divers domaines tels que la création de contenu, la gestion de projets, l'analyse de données, et bien plus encore. 🚀✨
