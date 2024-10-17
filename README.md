@@ -6,9 +6,6 @@
 
 ## 🌟 Fonctionnalités Principales
 
-- 🧠 Mémoire Contextuelle : Mémoire persistante des projets et préférences.
-- 🔧 Compétences Spécifiques : Support pour divers domaines comme le droit, la médecine, etc.
-- 📝 Génération de Contenus Complexes : Rapports, articles, scripts, code informatique.
 - 📄 Résumé de PDF : Résumé automatique des documents PDF.
 - 📊 Analyse de Fichier CSV : Analyse et visualisation des données CSV.
 - 📚 Recommandation de Livre : Suggestions de livres basées sur vos intérêts.
@@ -16,6 +13,9 @@
 - 📄 Analyse de CV : Analyse et amélioration des CV.
 - 🔍 Recherche dans les Documents : Téléchargez des documents et posez des questions spécifiques sur leur contenu.
 - 🩺 Moteur de Recherche Médicale : Recherche et génération de réponses basées sur des articles médicaux.
+- 🧠 Mémoire Contextuelle : Mémoire persistante des projets et préférences.
+- 🔧 Compétences Spécifiques : Support pour divers domaines comme la médecine, le droit, etc.
+- 📝 Génération de Contenus Complexes : Rapports, articles, scripts, code informatique.
 - 🤖 Assistant IA d’Entreprise : Assistance personnalisée pour les besoins professionnels.
 - 🎁 Surprise ! : Blagues et surprises amusantes intégrées pour égayer votre expérience.
 
@@ -35,6 +35,8 @@
     ├── requirements.txt
     ├── README.md
     ├── LICENSE
+    ├── .env
+    ├── .gitignore
     ├── assets/
     │   └── logo.png
     ├── .streamlit/
