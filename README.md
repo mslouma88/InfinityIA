@@ -79,6 +79,8 @@ streamlit run app.py
 
 L'application est déployée sur Streamlit Cloud. Pour plus d'informations, consultez ce [lien](https://streamlit.io/cloud).
 
+[Lien de l'application](https://infinity-ia.streamlit.app/)
+
 ## 📄 Licence
 
 Ce projet est sous licence MIT. Voir le fichier [LICENCE](LICENCE) pour plus de détails.
