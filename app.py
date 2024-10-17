@@ -230,7 +230,7 @@ def generate_ai_response(user_input):
         return f"⚠️ Une erreur est survenue : {e}"
 
 # Onglets pour choisir ce qu'il te convient
-tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["📝 Résumé de PDF", "📊 Analyse de CSV", "📚 Recommandation de Livre", "📝 Générateur de Contenu", "📄 Analyse de CV", "📄 cherchez dans un document",  "⏩ Suivant"])
+tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["📝 Résumé de PDF", "📊 Analyse de CSV", "📚 Recommandation de Livre", "📝 Générateur de Contenu", "📄 Analyse de CV", "🔍 cherchez dans un document",  "⏩ Suivant"])
 
 
 # Fonctionnalité : Résumé de PDF
