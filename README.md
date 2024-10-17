@@ -81,6 +81,10 @@ L'application est déployée sur Streamlit Cloud. Pour plus d'informations, cons
 
 [Lien de l'application](https://infinity-ia.streamlit.app/)
 
+## 🖥️ Interface Plateforme
+
+![alt text](assets/image.png)
+
 ## 📄 Licence
 
 Ce projet est sous licence MIT. Voir le fichier [LICENCE](LICENCE) pour plus de détails.
