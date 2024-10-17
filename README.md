@@ -94,5 +94,5 @@ Vos contributions sont les bienvenues ! Si vous souhaitez améliorer Infinity AI
 ## 📢 Suivez-nous
 Restez informé des dernières mises à jour et fonctionnalités en nous suivant sur [GitHub](https://github.com/mslouma88/infinityIA). 🐙🔔
 
-![Licence MIT](https://img.shields.io/badge/Licence-MIT-green)
-![Version](https://img.shields.io/badge/version-1.0-green.svg)
+![Licence MIT](https://img.shields.io/badge/Licence-MIT-blue)
+![Version](https://img.shields.io/badge/version-1.0-blue.svg)
