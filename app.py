@@ -343,8 +343,7 @@ with tab7:
     "⚕️ Recherche Médicale",
     "🔍 Recherche Documentaire",
     "🤖 IA Entreprise",
-    "💬 Chat Écrit",
-    "❓ FAQ Entreprise"])
+    "💬 Chat Écrit")
 
     # Fonctionnalité : Moteur de Recherche Médicale
     with tabs[0]: 
@@ -443,35 +442,6 @@ with tab7:
                 st.session_state.context = []
                 update_conversation()
                 st.success("Historique effacé !")
-
-    # Fonctionnalité : FAQ Entreprise
-    with tabs[4]:  # Assurez-vous que tabs[3] est correctement défini
-        st.header("FAQ Entreprise 🏢")
-        st.header("⚠️ on n'a pas encore fini de developper cette section")
-        # Saisir le chemin du répertoire
-        directory_path = st.text_input("🗂️ Spécifiez le chemin du répertoire contenant les fichiers FAQ :")
-
-        # Bouton pour parcourir les fichiers
-        if st.button("🔍 Parcourir"):
-            if os.path.isdir(directory_path):  # Vérifier si le chemin est un répertoire valide
-                st.success("✅ Répertoire trouvé : " + directory_path)
-
-                # Saisie de la question
-                question = st.text_input("💬 Posez votre question :")
-
-                # Bouton de recherche
-                if st.button("Rechercher"):
-                    if question:
-                        with st.spinner("⏳ Recherche en cours..."):
-                            response = search_in_files(question, directory_path)
-
-                        # Afficher la réponse
-                        st.subheader("Réponse :")
-                        st.write(response)
-                    else:
-                        st.warning("⚠️ Veuillez entrer une question.")
-            else:
-                st.error("❌ Le répertoire spécifié n'existe pas. Veuillez vérifier le chemin.")
 
 
 # Easter egg
