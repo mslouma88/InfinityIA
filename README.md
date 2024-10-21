@@ -50,8 +50,7 @@
         ├── medical_search.py
         ├── pdf_summary.py
         ├── Recherche_Documentaire.py
-        ├── search_documents.py
-        └── FAQ_entreprise.py
+        └── search_documents.py
 
 ## 🛠️ Installation
 
