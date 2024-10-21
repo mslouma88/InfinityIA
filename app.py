@@ -14,7 +14,6 @@ from utils.document_search import search_documents
 from utils.Recherche_Documentaire import RechercheDocumentaireWeb
 from utils.search_documents import search_documents
 from utils.medical_search import search_medical_articles, generate_medical_response
-from utils.FAQ_entreprise import search_in_files
 
 from dotenv import load_dotenv
 # Chargez les variables d'environnement à partir du fichier .env
