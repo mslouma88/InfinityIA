@@ -2,10 +2,6 @@ import os
 import openai
 from typing import List, Dict
 import requests
-from dotenv import load_dotenv
-
-# Charger les variables d'environnement du fichier .env
-load_dotenv()
 
 class RechercheDocumentaireWeb:
     def __init__(self):

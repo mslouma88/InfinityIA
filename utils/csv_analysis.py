@@ -1,13 +1,7 @@
 import pandas as pd
 import openai
-from dotenv import load_dotenv
 import os
 
-# Charger les variables d'environnement
-load_dotenv()
-
-# Configurer la clé API OpenAI
-openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def generate_ai_analysis(df_info):
     prompt = f"""En tant qu'analyste de données, examinez les informations suivantes sur un ensemble de données et fournissez une analyse approfondie :

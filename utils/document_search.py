@@ -1,15 +1,9 @@
 import os
 import openai
 from typing import List
-from dotenv import load_dotenv
 from pypdf import PdfReader
 import tiktoken
 
-# Charger les variables d'environnement
-load_dotenv()
-
-# Configurer l'API OpenAI
-openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def load_documents(uploaded_files: List[object]) -> str:
     """
