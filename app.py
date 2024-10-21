@@ -343,7 +343,7 @@ with tab7:
     "⚕️ Recherche Médicale",
     "🔍 Recherche Documentaire",
     "🤖 IA Entreprise",
-    "💬 Chat Écrit")
+    "💬 Chat Écrit"])
 
     # Fonctionnalité : Moteur de Recherche Médicale
     with tabs[0]: 
