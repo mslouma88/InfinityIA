@@ -21,7 +21,7 @@ load_dotenv()
 
 # Configuration de la page
 st.set_page_config(
-    page_title="Bienvenue Infinity AI",
+    page_title="Bienvenue Infinity IA",
     page_icon="♾️",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -47,7 +47,7 @@ st.markdown(
         }
     }
     </style>
-    <h1 class="title">Bienvenue sur Infinity AI ♾️</h1>
+    <h1 class="title">Bienvenue sur Infinity IA ♾️</h1>
     """,
     unsafe_allow_html=True
 )
@@ -157,10 +157,10 @@ st.sidebar.image(logo, width=300)
 selected_theme = st.sidebar.selectbox("🎨 Choisissez un thème", list(themes.keys()), index=0)
 update_theme(selected_theme)
 
-#st.title("Bienvenue sur Infinity AI")
+#st.title("Bienvenue sur Infinity IA")
 
 st.markdown("""
-**Infinity AI** est une plateforme alimentée par une intelligence artificielle avancée, conçue pour booster votre créativité et votre productivité. Elle offre une large gamme de fonctionnalités pour accompagner les étudiants, les créateurs, chercheurs et les entreprises dans leurs projets :
+**Infinity IA** est une plateforme alimentée par une intelligence artificielle avancée, conçue pour booster votre créativité et votre productivité. Elle offre une large gamme de fonctionnalités pour accompagner les étudiants, les créateurs, chercheurs et les entreprises dans leurs projets :
 """)
 def generate_response(prompt):
     response = openai.ChatCompletion.create(
