@@ -90,9 +90,8 @@ Ce projet est sous licence MIT. Voir le fichier [LICENCE](LICENCE) pour plus de 
 
 ## 📬 Contact
 
-- M. MEJRI Salam 📧
+- M. MEJRI Salam [📧](mailto:salam.mejri@gmail.com)
 
-- Mme BENAMOR Nesrine 📧
 
 Vos contributions sont les bienvenues ! Si vous souhaitez améliorer Infinity AI, n'hésitez pas à ouvrir une issue ou à soumettre une pull request. 🤝✨
 
